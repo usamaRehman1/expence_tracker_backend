@@ -8,7 +8,13 @@ connectDB();
 
 const app = express();
 app.use(express.json());
+
+app.get("/", (req, res) => {
+    res.send("Expense Tracker Backend Running...");
+});
+
 app.use("/api", routers);
+// app.use("/api", routers);
 
 const PORT = ENV.PORT || 3000;
 app.listen(PORT, () => {
