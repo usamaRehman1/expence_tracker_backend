@@ -5,9 +5,17 @@ import { connectDB } from "./src/helper/connectDB.js";
 import routers from "./src/routes/index.js";
 dotenv.config();
 connectDB();
+import cors from "cors";
+
 
 const app = express();
 app.use(express.json());
+app.use(
+    cors({
+        origin: "http://localhost:5173",
+        credentials: true,
+    })
+);
 
 app.get("/", (req, res) => {
     res.send("Expense Tracker Backend Running...");
