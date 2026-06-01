@@ -11,6 +11,10 @@ const transectionShema = new mongoose.Schema({
         required: true,
         trim: true
     },
+    type:{
+        type: String,
+        required : true,
+    },
     location: {
         type: String,
         required: true
